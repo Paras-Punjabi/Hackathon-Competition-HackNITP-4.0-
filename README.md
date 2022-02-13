@@ -11,3 +11,17 @@
 
 ### Website Link on Heroku
 [Visual-Science](https://visual-science.herokuapp.com/)
+
+### YoutTube Video Link
+[YouTube](https://www.youtube.com/watch?v=QWObkdKvAis)
+
+### Presentation Link
+[Presentation](https://onedrive.live.com/view.aspx?resid=D30BD84550B33209!176&ithint=file%2cpptx&authkey=!AOSdTBy3EqYUmoQ)
+
+### Setup
+Open Terminal where our app is there and run 
+```bash
+  npm run start
+```
+After this goto http://localhost:8000
+
