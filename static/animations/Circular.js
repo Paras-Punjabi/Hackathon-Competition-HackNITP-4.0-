@@ -2,7 +2,6 @@ let canvas = document.getElementById("canvas");
     let ctx = canvas.getContext("2d");
     ctx.lineWidth = "5";
     
- 
     let circle={
         radius:200,
         x:400,
@@ -19,11 +18,8 @@ let canvas = document.getElementById("canvas");
         ctx.arc(circle.x,circle.y,circle.radius,0,2*Math.PI,true);
         ctx.stroke();
         ctx.closePath();
-
-
     }
     drawCircle();
-
 
     let ball={
         radius: 20,
@@ -35,6 +31,8 @@ let canvas = document.getElementById("canvas");
     function draw(){
         //drawing and animating ball
         ctx.clearRect(0,0,canvas.width,canvas.height);
+        ctx.fillStyle = "rgba(0,0,0,0.1)";
+        ctx.fillRect(0,0,canvas.width,canvas.height);
         drawCircle();
         ctx.setLineDash([0,0]);
         ctx.beginPath();
@@ -65,14 +63,14 @@ let canvas = document.getElementById("canvas");
 
         //line from center to circumference
         ctx.beginPath();
-        ctx.moveTo(canvas.width/2,canvas.height/2);
-        ctx.lineTo(canvas.width/2+circle.radius,canvas.height/2)
+        ctx.moveTo(circle.x,circle.y);
+        ctx.lineTo(circle.x+circle.radius,circle.y);
         ctx.stroke()
         ctx.closePath()
 
         //tangent
         ctx.beginPath();
-        ctx.moveTo(canvas.width/2+circle.radius,canvas.height/2);
+        ctx.moveTo(canvas.width/2+circle.radius,canvas.height/2-50);
         ctx.lineTo(canvas.width/2+circle.radius,canvas.height/2+150)
         ctx.stroke();
         ctx.closePath();
@@ -84,15 +82,12 @@ let canvas = document.getElementById("canvas");
         ctx.fill();
         ctx.closePath();
 
-
-
-
         ctx.font="30px monospace"
-        ctx.fillText("a=ω^2r", canvas.width/2+ball.radius,canvas.height/2-25)
+        ctx.fillText("a=rω^2", canvas.width/2+ball.radius,canvas.height/2-25)
         ctx.font="30px monospace"
         ctx.fillText("v=rω", canvas.width/2+ball.radius+200,canvas.height/2+150)
         ctx.font="60px monospace"
-        ctx.fillText("◄",canvas.width/2+75,canvas.height/2+16)
+        ctx.fillText("◄",canvas.width/2+125,canvas.height/2-33)
         ctx.font="50px monospace"
         ctx.fillText("▼",canvas.width/2+circle.radius-14,canvas.height/2+160)
        
@@ -101,6 +96,4 @@ let canvas = document.getElementById("canvas");
     // draw();
 
     
-    function finalDraw(){
-        setInterval(draw,100);
-    }
+    setInterval(draw,100);

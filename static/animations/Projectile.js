@@ -1,23 +1,20 @@
 const canvas = document.getElementById('canvas');
 const ctx = canvas.getContext('2d');
-canvas.width = 800;
-canvas.height = 500;
+// canvas.width = 800;
+// canvas.height = 500;
 
 ctx.fillStyle = 'skyblue';
 ctx.fillRect(30,30,canvas.width,canvas.height);
 
 function line(x1,x2,y1,y2){
-    ctx.strokeStyle = 'red';
+    ctx.strokeStyle = 'black';
     ctx.lineWidth = 2;
-
     ctx.beginPath();
     ctx.moveTo(x1,y1);
     ctx.lineTo(x2,y2);
     ctx.stroke();
     ctx.closePath();
 }
-
-
 
 class Projectile{
 
@@ -39,6 +36,9 @@ class Projectile{
     // Drawing projectile line
     draw(){
         let range = (this.u**2)*Math.sin(2*this.angle)/this.g;
+        ctx.fillStyle = "lightskyblue";
+        ctx.fillRect(0,0,canvas.width,canvas.height);
+        line(this.x,this.x,this.y,this.y-190);
         this.arr[0] = 0;
         
         let c = 0;
@@ -52,7 +52,6 @@ class Projectile{
             let y2 = (this.arr[i+1])*Math.tan(this.angle) - this.g*(this.arr[i+1]**2)/(2*(this.u**2)*(Math.cos(this.angle)**2));
     
             line(this.x+this.arr[i], this.x+this.arr[i+1],this.y-y1, this.y-y2);
-            console.log(y2);
         }
     }
     
@@ -82,7 +81,7 @@ class Projectile{
 
 
 
-let action = new Projectile(100,450,30,Math.PI/4,1.5);
+let action = new Projectile(25,canvas.height-canvas.height/3,30,Math.PI/4,1.5);
 
 action.draw();
 
