@@ -11,7 +11,8 @@
     "nodemon": "^2.0.15"
   },
   "scripts": {
-    "start": "node app.js"
+    "start": "node app.js",
+    "build":"echo Building..."
   },
   "repository": {
     "type": "git",
