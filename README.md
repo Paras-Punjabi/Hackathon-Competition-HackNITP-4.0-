@@ -9,8 +9,8 @@
 * This website is made using HTML5, CSS3, Vanilla JavaScript, Node.js, ejs as view-engine, express module,Bootstrap as frontend library for HTML and CSS. 
 * This website is helpful for students to visualize science topics by showing them animations.
 
-### Website Link on Heroku
-[Visual-Science](https://visual-science.herokuapp.com/)
+### Website Link
+[Visual-Science](https://visual-science-vjlm.onrender.com/)
 
 ### YoutTube Video Link
 [YouTube](https://www.youtube.com/watch?v=QWObkdKvAis)
